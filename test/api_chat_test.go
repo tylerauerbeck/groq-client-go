@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/tylerauerbeck/groq-client-go"
 )
 
 func Test_openapi_ChatAPIService(t *testing.T) {

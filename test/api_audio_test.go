@@ -1,7 +1,7 @@
 /*
 Groq API
 
-Testing ModelsAPIService
+Testing AudioAPIService
 
 */
 
@@ -14,19 +14,19 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/tylerauerbeck/groq-client-go"
 )
 
-func Test_openapi_ModelsAPIService(t *testing.T) {
+func Test_openapi_AudioAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ModelsAPIService ListModels", func(t *testing.T) {
+	t.Run("Test AudioAPIService CreateTranscription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ModelsAPI.ListModels(context.Background()).Execute()
+		resp, httpRes, err := apiClient.AudioAPI.CreateTranscription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,13 +34,11 @@ func Test_openapi_ModelsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ModelsAPIService RetrieveModel", func(t *testing.T) {
+	t.Run("Test AudioAPIService CreateTranslation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var model string
-
-		resp, httpRes, err := apiClient.ModelsAPI.RetrieveModel(context.Background(), model).Execute()
+		resp, httpRes, err := apiClient.AudioAPI.CreateTranslation(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
